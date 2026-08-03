@@ -153,3 +153,111 @@
     Scikit-learn is a free, widely-used Python library offering classification, regression, clustering, and dimensionality reduction algorithms.
     It supports the entire ML pipeline including data preprocessing, model training, evaluation, hyperparameter tuning, and model export.
     A typical workflow involves data scaling, train-test splitting, model instantiation, training with fit(), prediction, evaluation with metrics like confusion matrix, and saving the model for production use.
+
+## Definition and Types of Regression
+
+- Regression is a supervised learning technique used to model the relationship between a continuous target variable and explanatory feature.
+
+- Simple regression involves one independent variable predicting a dependent variable, while multiple regression uses more than one independent variable, both can be linear and nonlinear.
+
+### Application of regression
+
+- Regression is used to predict continuous values such as CO2 emissions from cars, sales forecasting, house prices, maintenance needs, and employment income.
+- It's also applied in environmental science, public health, and other fields to estimate rainfall, wildfire risks, disease spread, and disease likelihood.
+
+### Regression Algorithms
+
+- Classic regression methods include linear and polynomial regression.
+- Modern machine learning regression algorithms includes random forest, XGBoots, k-nearest neighbors, support vector machines, and neural neural network.
+
+## Simple Linear Regression
+
+- Simple linear regression models a linear relationship between one continuous target variable and a single explanatory future.
+- It's used to predict a continuous value, such as CO2 emissions of a car, bases on one independent variable like engine.
+
+### How Simple Linear Regression Works
+
+    A best-fit line is determined through data points to represent the relationship between the independent variable and the target variable.
+    The model is expressed as a linear equation with coefficients (theta zero as intercept and theta one as slope) calculated to minimize prediction errors.
+
+### Model Evaluation and Calculation
+
+    Residual errors measure the difference between actual and predicted values; the mean squared error (MSE) quantifies overall fit quality.
+    Ordinary Least Squares (OLS) regression finds the line that minimizes the mean of residual errors using formulas derived by Gauss and Legendre.
+
+### Advantages and Limitations
+
+    OLS regression is easy to understand, interpret, and fast to compute, especially for small datasets.
+    However, it may oversimplify complex relationships and is sensitive to outliers, which can reduce accuracy.
+
+### Multiple Regression
+
+    Multiple linear regression models the dependent variable as a linear combination of multiple independent variables with associated weights and an intercept term.
+    The model can be represented mathematically using matrices for features and parameters.
+
+Applications and Examples
+
+    It can measure the effect strength of each independent variable on the dependent variable, such as predicting car CO2 emissions from engine size, cylinders, and fuel consumption.
+    It is widely used in various fields, including education, to predict outcomes and analyze relationships between variables.
+
+Model Building and Pitfalls
+
+    Adding too many variables can lead to overfitting, where the model memorizes training data but performs poorly on new data.
+    Categorical variables can be included by converting them into numerical or Boolean features.
+    Correlated (collinear) variables should be handled carefully or removed to avoid misleading results.
+
+Parameter Estimation and Prediction
+
+    Parameters are estimated by minimizing the mean squared error (MSE) between predicted and actual values, commonly using ordinary least squares or optimization algorithms like gradient descent.
+    The model can predict outcomes for new data points by plugging feature values into the linear equation.
+
+Interpretation and Visualization
+
+    For one feature, the model is a line; for two features, a plane; and for more features, a hyperplane.
+    Multiple linear regression assigns relative importance to each feature based on the learned weights.
+
+### Polynomial Regression
+
+    Polynomial regression fits data using polynomial expressions of features by transforming the problem into a linear regression with new variables representing powers of the original feature.
+    While polynomial regression can fit data well, very high-degree polynomials can overfit by capturing noise instead of underlying trends.
+
+Nonlinear Regression
+
+    Nonlinear regression models relationships using nonlinear functions such as exponential, logarithmic, or sinusoidal functions that cannot be reduced to linear regression.
+    Examples include modeling exponential growth (e.g., GDP growth), logarithmic diminishing returns (e.g., productivity over hours worked), and periodic patterns (e.g., seasonal variations).
+
+Model Selection and Optimization
+
+    Visual analysis of scatter plots helps identify the type of relationship (linear or nonlinear) and guides the choice of regression model.
+    Optimization techniques like gradient descent can be used to find the best parameters for a given nonlinear model, or machine learning models such as regression trees and neural networks can be applied when the model form is unknown.
+
+
+### Logistic Regression Overview
+
+    Logistic regression predicts the probability that an observation belongs to one of two classes, such as true/false or yes/no.
+    It is suitable when the target variable is binary, when probabilistic outcomes are needed, and when understanding feature impact is important.
+
+>Modeling and Decision Boundary
+
+    Logistic regression uses a sigmoid function to map predictions to probabilities between 0 and 1, unlike linear regression which can produce unbounded values.
+    A threshold (commonly 0.5) is applied to convert predicted probabilities into binary class assignments, defining a decision boundary.
+
+>> Applications and Example
+
+    Logistic regression can predict outcomes like customer churn, disease likelihood, or failure probability based on input features.
+    For example, predicting customer churn using features such as age and account information, where the model outputs the probability of churn and classifies customers accordingly.
+
+>Training Process of Logistic Regression
+
+    Start with an initial set of parameters (theta), often chosen randomly.
+    Predict the probability of class 1 for each data observation and measure the error using a cost function called log loss.
+
+>Optimization and Cost Function
+
+    Logistic regression uses a decision boundary created by combining a linear model with a sigmoid function.
+    The goal is to minimize the log loss, which measures how well predicted probabilities match actual classes, penalizing confident but incorrect predictions.
+
+>Gradient Descent Methods
+
+    Gradient descent iteratively adjusts parameters in the direction of steepest descent of the cost function, controlled by a learning rate.
+    Stochastic gradient descent (SGD) speeds up training by using random subsets of data, converging faster but with more variability, and can be improved by adjusting learning rate or sample size over time.

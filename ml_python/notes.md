@@ -133,7 +133,8 @@
 
 *DALL-E*: Creates images from text descriptions.
 
-*PyTorch*: Also used to build generative models like GANs for creating new data.
+*PyTorch*: Also used to build generative models like GANs for creating new
+> Pruning and Splitting data.
 
 ## Scikit-learn ML ecosystem
 
@@ -261,3 +262,34 @@ Model Selection and Optimization
 
     Gradient descent iteratively adjusts parameters in the direction of steepest descent of the cost function, controlled by a learning rate.
     Stochastic gradient descent (SGD) speeds up training by using random subsets of data, converging faster but with more variability, and can be improved by adjusting learning rate or sample size over time.
+
+### Classification Overview
+
+    Classification is a supervised learning method that predicts categorical labels on new data using trained models.
+    It involves associating input features with discrete output classes to make accurate predictions.
+
+> Applications and Use Cases
+
+    Common uses include email filtering, speech-to-text, handwriting recognition, biometric identification, and document classification.
+    Specific examples include churn prediction, customer segmentation, advertising response prediction, loan default prediction, and drug prescription.
+
+> Classification Algorithms and Multi-class Strategies
+
+    Popular algorithms include Naive Bayes, Logistic Regression, Decision Trees, K-Nearest Neighbors, Support Vector Machines, and Neural Networks.
+    Multi-class classification can be handled by extending binary classifiers using one-versus-all (one classifier per class) or one-versus-one (classifiers for each pair of classes) strategies, with voting schemes to decide final class labels.
+
+### Definition and Structure of Decision Trees
+
+    A Decision Tree is a flowchart-like algorithm where internal nodes represent tests on features, branches represent test outcomes, and leaf nodes assign classes.
+    It classifies data points by splitting the dataset based on feature values to predict outcomes, such as prescribing a drug based on patient data.
+
+> Training and Growing Decision Trees
+
+    The tree starts with a seed node and splits data by selecting the feature that best separates classes according to a splitting criterion.
+    The process repeats recursively until stopping criteria are met, such as maximum depth or minimum samples per node,
+> Pruning and Splitting  or all nodes are pure.
+
+> Pruning and Splitting Criteria
+
+    Pruning reduces tree complexity to avoid overfitting, improve generalization, and enhance interpretability by cutting branches that do not improve performance.
+    Splitting criteria include measures like information gain (entropy reduction) and Gini impurity, which help select the best feature to split data at each node for clearer class separation.

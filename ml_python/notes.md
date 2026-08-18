@@ -287,9 +287,48 @@ Model Selection and Optimization
 
     The tree starts with a seed node and splits data by selecting the feature that best separates classes according to a splitting criterion.
     The process repeats recursively until stopping criteria are met, such as maximum depth or minimum samples per node,
-> Pruning and Splitting  or all nodes are pure.
 
 > Pruning and Splitting Criteria
 
     Pruning reduces tree complexity to avoid overfitting, improve generalization, and enhance interpretability by cutting branches that do not improve performance.
     Splitting criteria include measures like information gain (entropy reduction) and Gini impurity, which help select the best feature to split data at each node for clearer class separation.
+
+### SVM Fundamentals
+
+    SVM maps data points into a multidimensional space and finds a hyperplane that best separates two classes by maximizing the margin between them.
+    The margin is the distance between the hyperplane and the closest data points from each class, called support vectors.
+
+> Handling Non-linearity and Parameters
+
+    For non-linearly separable data, SVM uses kernel functions to transform data into higher-dimensional space where classes become separable.
+    Common kernels include linear, polynomial, radial basis function (RBF), and sigmoid.
+    The parameter C controls the trade-off between maximizing the margin and allowing misclassifications (soft margin).
+
+> SVM for Regression and Applications
+
+    SVM can also be adapted for regression (Support Vector Regression, SVR), using an epsilon margin to distinguish noise from signal.
+    Advantages of SVM include effectiveness in high-dimensional spaces and robustness to overfitting.
+    Limitations include slower training on large datasets and sensitivity to noise and kernel choice.
+    SVM is commonly used in image recognition, spam detection, sentiment analysis, speech recognition, and anomaly detection.
+
+### K-NN Basics
+
+    K-NN uses labeled data points to predict the label of new points by finding the closest neighbors based on a distance metric.
+    For classification, it predicts the most common class among the k nearest neighbors; for regression, it uses the average or median of neighbors' values.
+
+> How K-NN Works
+
+    Choose a value for k, calculate distances from the query point to all training points, find the k closest neighbors, and predict based on their labels.
+    The algorithm is lazy, meaning it stores training data and only computes distances when making predictions.
+
+> Choosing and Impact of K
+
+    Small k values can cause overfitting with fluctuating predictions; large k values can cause underfitting by smoothing details.
+    The optimal k is found by testing different values and measuring accuracy on a labeled test set.
+
+> Challenges and Best Practices
+
+    Skewed class distributions can bias majority voting; weighting neighbors by distance can help.
+    Feature scaling (e.g., standardization) is important to prevent features with large values from dominating distance calculations.
+    Removing irrelevant or redundant features improves accuracy and reduces computational cost, often requiring domain knowledge to identify relevant features.
+
